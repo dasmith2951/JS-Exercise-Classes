@@ -51,7 +51,7 @@ class Airplane {
 
   eat(someFood) {
 
-    if (this.stomach.length <= 9) {
+    if (this.stomach.length < 10) {
       this.stomach.push(someFood);
     }
   }
@@ -66,7 +66,7 @@ class Airplane {
 
 }
   
-console.log(new Person("Mary", 50));
+
 
 /*
     TASK 2
@@ -172,7 +172,7 @@ class Instructor extends Lambdasian {
     super(object);
     this.specialty = object.specialty;
     this.favLanguage = object.favLanguage;
-    this.catchphrase = object.catchphrase;
+    this.catchPhrase = object.catchPhrase;
 
   }
 
@@ -252,10 +252,28 @@ class Student extends Instructor {
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
 */
 
-class ProjectManager {
-     
- }
-  /*
+class ProjectManager extends Student {
+  constructor(object) {
+    super(object)
+      this.gradClassName = object.gradClassName;
+      this.favInstructor = object.favInstructor;
+    }
+    standUp(channel) {
+      return `${this.name} announces to ${channel}, @channel standy times!`
+    }
+    debugsCode(student, subject) {
+      return `${this.name} debugs ${student.name}'s code on ${subject}`
+    }
+}
+
+const Sean = new Instructor({
+  name: "Sean",
+  specialty: "redux",
+  favLanguage: "JavaScript",
+  catchPhrase: "Don't forget the homies"
+});
+
+/*
     STRETCH PROBLEM (no tests!)
       - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
       - Now that our students have a grade build out a method on the Instructor (this will be used by _BOTH_ instructors and PM's) that will randomly add or subtract points to a student's grade. _Math.random_ will help.
