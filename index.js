@@ -80,11 +80,12 @@ console.log(new Person("Mary", 50));
           + Should cause the the `tank` to go down taking `milesPerGallon` into account.
       - A car which runs out of `fuel` while driving can't drive any more distance:
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
-  */
+*/
   
- class Car {
+class Car {
 
-  constructor (model, mpg) {
+constructor (model, mpg) {
+
   this.model = model;
   this.milesPerGallon = mpg;
   this.tank = 0;
@@ -203,12 +204,41 @@ class Instructor extends Lambdasian {
           + `listSubjects` a method that returns all of the student's favSubjects in a single string: `Loving HTML, CSS, JS!`.
           + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
           + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
-  */
- class Student {
-     
- }
+*/
+
+class Student extends Instructor {
+
+  constructor(object) {
+
+  super(object)
+
+    this.previousBackground = object.previousBackground;
+    this.className = object.className;
+    this.favSubjects = object.favSubjects;
+
+  }
+
+  listSubjects() {
+
+    return `Loving ${this.favSubjects}`;
+
+  }
+
+  PRAssignment(subject) {
+
+    return `${this.name} has submitted a PR for ${subject}`;
+
+  }
+
+  sprintChallenge(subject) {
+
+    return `${this.name} has begun sprint challenge on ${subject}`;
+
+  }
+
+}
   
-  /*
+/*
     TASK 6
       - Write a ProjectManager class extending Instructor.
       - Its constructor takes a single argument - an object with the following keys:
@@ -220,8 +250,9 @@ class Instructor extends Lambdasian {
       - ProjectManager instances have the following methods:
           + `standUp` a method that takes in a slack channel and returns `{name} announces to {channel}, @channel standy times!`
           + `debugsCode` a method that takes in a student object and a subject and returns `{name} debugs {student.name}'s code on {subject}`
-  */
- class ProjectManager {
+*/
+
+class ProjectManager {
      
  }
   /*
