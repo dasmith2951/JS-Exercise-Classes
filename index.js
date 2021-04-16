@@ -10,23 +10,23 @@
 
 // EXAMPLE SOLUTION CODE:
 class Airplane {
-    constructor(name) {
-      this.name = name;
-      this.isFlying = false;
-    }
-    takeOff() {
-      this.isFlying = true;
-    }
-    land() {
-      this.isFlying = false;
-    }
+  constructor(name) {
+    this.name = name;
+    this.isFlying = false;
   }
+  takeOff() {
+    this.isFlying = true;
+  }
+  land() {
+    this.isFlying = false;
+  }
+}
   
-  /*
-  // 👇 COMPLETE YOUR WORK BELOW 👇
-  // 👇 COMPLETE YOUR WORK BELOW 👇
-  // 👇 COMPLETE YOUR WORK BELOW 👇
-  */
+/*
+// 👇 COMPLETE YOUR WORK BELOW 👇
+// 👇 COMPLETE YOUR WORK BELOW 👇
+// 👇 COMPLETE YOUR WORK BELOW 👇
+*/
   
   /*
     TASK 1
@@ -39,9 +39,9 @@ class Airplane {
           + When an instance poops, its `stomach` should empty.
       - Give instances of Person a method `.toString()`:
           + It should return a string with `name` and `age`. Example: "Mary, 50"
-  */
+*/
   
- class Person {
+class Person {
 
   constructor(name, age) {
     this.name = name;
@@ -84,40 +84,41 @@ class Airplane {
   
 class Car {
 
-constructor (model, mpg) {
+  constructor (model, mpg) {
 
-  this.model = model;
-  this.milesPerGallon = mpg;
-  this.tank = 0;
-  this.odometer = 0;
-
-}
-
-fill(gallons) {
-
-  this.tank = this.tank + gallons;
-
-}
-  
-drive(distance) {
-
-  const driveMiles = this.tank * this.milesPerGallon;
-
-  if (distance <= driveMiles) {
-    
-    this.odometer = this.odometer + distance;
-    this.tank = this.tank - (distance/this.milesPerGallon);
-
-  } else {
-
-    this.odometer = this.odometer + driveMiles;
+    this.model = model;
+    this.milesPerGallon = mpg;
     this.tank = 0;
-
-    return `I ran out of fuel at ${this.odometer} miles!`;
+    this.odometer = 0;
 
   }
 
-}
+  fill(gallons) {
+
+    this.tank = this.tank + gallons;
+
+  }
+  
+  drive(distance) {
+
+  const driveMiles = this.tank * this.milesPerGallon;
+
+    if (distance <= driveMiles) {
+    
+      this.odometer = this.odometer + distance;
+      this.tank = this.tank - (distance/this.milesPerGallon);
+
+    } else {
+
+      this.odometer = this.odometer + driveMiles;
+      this.tank = 0;
+
+      return `I ran out of fuel at ${this.odometer} miles!`;
+
+    }
+
+  }
+
 }  
 
 /*
@@ -253,24 +254,37 @@ class Student extends Instructor {
 */
 
 class ProjectManager extends Student {
+
   constructor(object) {
-    super(object)
-      this.gradClassName = object.gradClassName;
-      this.favInstructor = object.favInstructor;
-    }
-    standUp(channel) {
-      return `${this.name} announces to ${channel}, @channel standy times!`
-    }
-    debugsCode(student, subject) {
-      return `${this.name} debugs ${student.name}'s code on ${subject}`
-    }
+
+  super(object)
+
+    this.gradClassName = object.gradClassName;
+    this.favInstructor = object.favInstructor;
+
+  }
+
+  standUp(channel) {
+
+    return `${this.name} announces to ${channel}, @channel standy times!`
+
+  }
+
+  debugsCode(student, subject) {
+
+    return `${this.name} debugs ${student.name}'s code on ${subject}`
+
+  }
+
 }
 
 const Sean = new Instructor({
+
   name: "Sean",
   specialty: "redux",
   favLanguage: "JavaScript",
   catchPhrase: "Don't forget the homies"
+  
 });
 
 /*
